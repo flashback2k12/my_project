@@ -81,11 +81,6 @@ public class DatenErfassungV2 {
 	private JButton btnBerechneErgebnis;
 	private JButton btnBerechneProv;
 	private JButton btnCreateTextFile;
-	//protected String gesEinkunft;
-	//protected String vorsorgeAufwand;
-	//protected String spenden;
-	//protected String agB;
-	//protected String zuVerstEinkommen;
 	private JLabel lblWorkaround;
 	private JLabel lblVorsorgeaufwendungen;
 	private JTextField txt_sumEin;
@@ -97,7 +92,7 @@ public class DatenErfassungV2 {
 	private JLabel lblZuVersteuerndesEinkommen;
 	private JTextField txt_spenden;
 	private JLabel lblWerbungskosten_1;
-	private JTextField txt_wkPrüfung;
+	private JTextField txt_wkPrï¿½fung;
 	private JTextField txt_CreateFile;
 
 	/**
@@ -128,15 +123,7 @@ public class DatenErfassungV2 {
 	 */
 	private void initialize() {
 		
-		/*
-		final String JAHR = txt_jahr.getText();
-		final String VORNAME = txt_vorname.getText(); 
-		final String NACHNAME = txt_nachname.getText();
-		final String STRASSE = txt_strasse.getText();
-		final String PLZ = txt_plz.getText();
-		final String WOHNORT = txt_ort.getText();
-		*/
-				
+						
 		frame = new JFrame();
 		frame.setBounds(100, 100, 970, 732);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -540,7 +527,7 @@ public class DatenErfassungV2 {
 					
 				werbungsKosten = Math.round(((arbKM*arbTage*KMPREIS)+ARBEITSMITTEL+KONTO+TELEFON)*100)/100.00;
 				
-				txt_wkPrüfung.setText("" + '\t' + werbungsKosten); 
+				txt_wkPrï¿½fung.setText("" + '\t' + werbungsKosten); 
 				
 				/*
 				 * Vergleiche WK mit Pauschale
@@ -704,7 +691,7 @@ public class DatenErfassungV2 {
 				double einkommenSteuer = 0;
 				
 				/*
-				 * Berechnung Summe / Gesamtbetrag Einkünfte
+				 * Berechnung Summe / Gesamtbetrag Einkï¿½nfte
 				 */
 				
 				try {
@@ -724,7 +711,7 @@ public class DatenErfassungV2 {
 				sumEinkunft = Math.round((bruttoJahresLohn - werbungsKosten)*100)/100.00;
 				
 				/**
-				 * ACHTUNG ERFORDERLICHE CODE OPTIMIERUNG --> ALLEINERZIEHENDEN BETRAG; ALTERSBETRAG; L+F FB BERÜCKSICHTIGEN
+				 * ACHTUNG ERFORDERLICHE CODE OPTIMIERUNG --> ALLEINERZIEHENDEN BETRAG; ALTERSBETRAG; L+F FB BERï¿½CKSICHTIGEN
 				 */
 				
 				gesEinkunft = sumEinkunft;
@@ -760,7 +747,7 @@ public class DatenErfassungV2 {
 				/**
 				 * ACHTUNG CODE OPTIMIERUNG ERFORDERLICH
 				 * 
-				 * 0.74 ist nur für 2012 --> Vergleichabfrage schreiben für den Zeitraum von 2010 - 2015 --> fixed
+				 * 0.74 ist nur fï¿½r 2012 --> Vergleichabfrage schreiben fï¿½r den Zeitraum von 2010 - 2015 --> fixed
 				 */
 				
 				try {
@@ -849,7 +836,7 @@ public class DatenErfassungV2 {
 				 * Berechnumg zumutbare Belastung
 				 */
 				/**
-				 * ACHTUNG ERFORDERLICHE CODE OPTIMIERUNG --> ABGLEICH HÖCHSTBETRÄGE --> fixed
+				 * ACHTUNG ERFORDERLICHE CODE OPTIMIERUNG --> ABGLEICH Hï¿½CHSTBETRï¿½GE --> fixed
 				 */
 				
 				try {
@@ -905,7 +892,7 @@ public class DatenErfassungV2 {
 				 * Vergleich gezahlte Spenden mit Pauschale
 				 */
 				/**
-				 * ACHTUNG ERFORDERLICHE CODE OPTIMIERUNG --> ABGLEICH HÖCHSTBETRÄGE --> fixed
+				 * ACHTUNG ERFORDERLICHE CODE OPTIMIERUNG --> ABGLEICH Hï¿½CHSTBETRï¿½GE --> fixed
 				 */
 				
 				double maxSpenden = 0;
@@ -941,7 +928,7 @@ public class DatenErfassungV2 {
 				 * Berechnung Einkommensteuer (Grundtarif - ohne Schnickschnack)
 				 */
 				/**
-				 * ACHTUNG ERFORDERLICHE CODE OPTIMIERUNG --> VERWEIS AUF §32 EStG
+				 * ACHTUNG ERFORDERLICHE CODE OPTIMIERUNG --> VERWEIS AUF ï¿½32 EStG
 				 * 
 				 * VERGLEICH ABFRAGE
 				 */
@@ -1040,7 +1027,7 @@ public class DatenErfassungV2 {
 				 * Generierung Auswertungsblatt 
 				 */
 				/**
-				 * ACHTUNG ERFORDERLICHE CODE OPTIMIERUNG --> ENTFERNUNG Prüfungs - TEXTFIELDS OHNE BEDEUTSAMEN NUTZEN
+				 * ACHTUNG ERFORDERLICHE CODE OPTIMIERUNG --> ENTFERNUNG Prï¿½fungs - TEXTFIELDS OHNE BEDEUTSAMEN NUTZEN
 				 */
 				
 				String targetFile = txt_CreateFile.getText(); 
@@ -1053,7 +1040,7 @@ public class DatenErfassungV2 {
 				String Jahr = "\n Steuerjahr: " + '\t' + '\t' + txt_jahr.getText();
 				String Name = "\n Vorname: "+ '\t' + '\t' + txt_vorname.getText();
 				String Nachname = "\n Nachname: "+ '\t' + '\t' + txt_nachname.getText(); 
-				String Straße = "\n Straße: "+ '\t' + '\t' + txt_strasse.getText();
+				String Straï¿½e = "\n Straï¿½e: "+ '\t' + '\t' + txt_strasse.getText();
 				String PLZ = "\n PLZ: "+ '\t' + '\t' + txt_plz.getText();
 				String Wohnort = "\n Wohnort: "+ '\t' + '\t' + txt_ort.getText(); 
 				String Arbeit = "\n Arbeitsplatz: "+ '\t' + '\t' + txt_arbOrt.getText(); 
@@ -1062,7 +1049,7 @@ public class DatenErfassungV2 {
 				String SummeEinkunft = "\n = Summe der Einkuenfte: "+ '\t' + '\t' + txt_sumEin.getText();
 				String Vorsorge = "\n ./. Vorsorgeaufwendungen: "+ '\t' + '\t' + txt_vorsorge.getText();	
 				String Spenden = "\n ./. Spenden: "+ '\t' + '\t' + txt_spenden.getText();
-				String AGB = "\n ./. aussergewöhnliche Belastungen: "+ '\t' + '\t' + txt_agb.getText(); 
+				String AGB = "\n ./. aussergewï¿½hnliche Belastungen: "+ '\t' + '\t' + txt_agb.getText(); 
 				String ZuVerEinkommen = "\n = zu versteuerndes Einkommen: "+ '\t' + '\t' + txt_zvE.getText(); 
 				String EST = "\n = tarifliche Einkommensteuer: "+ '\t' + '\t' + txt_berechneteEST.getText(); 
 				String LST = "\n ./. gezahlter Lohnsteuer: "+ '\t' + '\t' + txt_lstJahr.getText();
@@ -1076,7 +1063,7 @@ public class DatenErfassungV2 {
 					writer.write(Jahr);
 					writer.write(Name);
 					writer.write(Nachname);
-					writer.write(Straße);
+					writer.write(Straï¿½e);
 					writer.write(PLZ);
 					writer.write(Wohnort);
 					writer.write(Arbeit);
@@ -1226,10 +1213,10 @@ public class DatenErfassungV2 {
 		lblWerbungskosten_1.setBounds(765, 536, 118, 14);
 		frame.getContentPane().add(lblWerbungskosten_1);
 		
-		txt_wkPrüfung = new JTextField();
-		txt_wkPrüfung.setBounds(765, 560, 144, 20);
-		frame.getContentPane().add(txt_wkPrüfung);
-		txt_wkPrüfung.setColumns(10);
+		txt_wkPrï¿½fung = new JTextField();
+		txt_wkPrï¿½fung.setBounds(765, 560, 144, 20);
+		frame.getContentPane().add(txt_wkPrï¿½fung);
+		txt_wkPrï¿½fung.setColumns(10);
 		
 		txt_CreateFile = new JTextField();
 		txt_CreateFile.setBounds(168, 647, 184, 20);
